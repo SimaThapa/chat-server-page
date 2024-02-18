@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const ChatBody = ({ messages }) => {
   const navigate = useNavigate();
 
-  
-
   const handleLeaveChat = () => {
     localStorage.removeItem('userName');
     navigate('/');

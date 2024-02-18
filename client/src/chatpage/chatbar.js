@@ -8,6 +8,10 @@ const ChatBar = ({ socket }) => {
     socket.on('newUserResponse', (data) => setUsers(data));
   }, [socket, users]);
 
+  const handleSelectUser=(userName,id)=>{
+    console.log("user name",userName,id)
+  }
+
   return (
     <div className="chat__sidebar" >
       <div>
@@ -23,7 +27,7 @@ const ChatBar = ({ socket }) => {
         <div className="chat__users">
           {users.map((user) => (
               <p key={user.socketID}>
-                  <button style={{border:"hidden"}}>
+                  <button style={{border:"hidden"}} onClick={()=>handleSelectUser(user?.userName,user?.id)}>
                     <div>
                      {user.userName}
                      </div>

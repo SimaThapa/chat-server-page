@@ -25,6 +25,7 @@ const ChatFooter = ({ socket }) => {
       function handleOnEnter (text) {
         console.log('enter', text)
       }
+      
 
  
   return (
