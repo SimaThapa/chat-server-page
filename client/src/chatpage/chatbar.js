@@ -24,7 +24,9 @@ const ChatBar = ({ socket }) => {
           {users.map((user) => (
               <p key={user.socketID}>
                   <button style={{border:"hidden"}}>
+                    <div>
                      {user.userName}
+                     </div>
                   </button>
               </p>
             ))}
