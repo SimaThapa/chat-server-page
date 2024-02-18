@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import InputEmoji from 'react-input-emoji'
 
 const ChatFooter = ({ socket }) => {
+
   const [message, setMessage] = useState('');
 
   
@@ -18,22 +19,32 @@ const ChatFooter = ({ socket }) => {
     }
     setMessage('');
   };
-  const [ text, setText ] = useState('')
-
+  
+  // const [ text, setText ] = useState('')
+  
       function handleOnEnter (text) {
         console.log('enter', text)
       }
-  
+
+ 
   return (
     <div className="chat__footer">
       <form className="form" onSubmit={handleSendMessage}>
-        <InputEmoji
-            value={text}
-            onChange={setText}
-            cleanOnEnter
-            onEnter={handleOnEnter}
-            placeholder="Type a message"
-          />
+      <InputEmoji
+          value={message}
+          onChange={setMessage}
+          cleanOnEnter
+          onEnter={handleOnEnter}
+          placeholder="Type a message"
+          className="message"
+        />
+         {/* <input
+          type="text"
+          placeholder="Write message"
+          className="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        /> */}
            
         <button className="sendBtn" >
           SEND 
